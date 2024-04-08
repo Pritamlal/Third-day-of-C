@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int n,firstd,lastd,digit,swappednum;
+	printf("Enter the number::");
+	scanf("%d",&n);
+	
+	lastd=n%10;
+	
+	digit=(int)log10(n);
+	
+	firstd=(int)(n/pow(10,digit));
+	printf("%d \n%d",lastd,firstd);
+	
+	printf("\nTheir sum is %d",lastd+firstd);
+	
+	swappednum=lastd;
+	swappednum*=(int)pow(10,digit);
+	swappednum+=n%((int)pow(10,digit));
+	swappednum-=lastd;
+	swappednum+=firstd;
+	
+	printf("\nHere is Your swappednum::%d",swappednum);
+	
+}
